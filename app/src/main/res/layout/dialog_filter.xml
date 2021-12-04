@@ -42,12 +42,14 @@
         <RadioButton
             android:id="@+id/filter_student"
             style="@style/RadioButtonFilter"
-            android:text="@string/main_filter_students" />
+            android:text="@string/main_filter_students"
+            android:textColor="@color/color_filter_student" />
 
         <RadioButton
             android:id="@+id/filter_lector"
             style="@style/RadioButtonFilter"
-            android:text="@string/main_filter_lectors" />
+            android:text="@string/main_filter_lectors"
+            android:textColor="@color/color_filter_lector" />
 
     </RadioGroup>
 
