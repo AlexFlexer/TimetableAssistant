@@ -1,4 +1,5 @@
 <resources>
+
     <style name="Theme.TimetableAssistant" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
@@ -6,5 +7,13 @@
         <item name="android:windowBackground">#00000000</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="RadioButtonFilter" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 </resources>

@@ -4,6 +4,7 @@
     <string name="splash_greeting">Ваш личный помощник в пространстве и времени</string>
 
     <string name="main_filter">Фильтр</string>
+    <string name="main_filter_all">Все</string>
     <string name="main_filter_students">Студент</string>
     <string name="main_filter_lectors">Преподаватель</string>
 </resources>
