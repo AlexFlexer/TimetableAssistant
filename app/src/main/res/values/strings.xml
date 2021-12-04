@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Timetable Assistant</string>
+
+    <string name="splash_greeting">Ваш личный помощник в пространстве и времени</string>
 </resources>
