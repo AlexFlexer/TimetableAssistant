@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_white"
+    android:background="#E7E7E7"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_timetables"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipChildren="false"
         android:clipToPadding="false"
         android:paddingHorizontal="16dp"
         android:paddingTop="16dp"
         android:paddingBottom="70dp"
-        tools:clipToPadding="true"
-        tools:itemCount="200" />
+        tools:itemCount="200"
+        tools:listitem="@layout/item_timetable" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_add"
