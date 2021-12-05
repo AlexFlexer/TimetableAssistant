@@ -3,7 +3,7 @@
 
     <string name="splash_greeting">Прототип, только для Вас</string>
 
-    <string name="main_add_timetable_title">Новое расписание \"%1$s\"</string>
+    <string name="main_add_timetable_title">Новое расписание\n\"%1$s\"</string>
     <string-array name="weekdays">
         <item>пн</item>
         <item>вт</item>
