@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.alexflex.timetableassistant.R
 import com.alexflex.timetableassistant.base.BaseBindingActivity
@@ -12,6 +13,7 @@ import com.alexflex.timetableassistant.databinding.ActivityAddTimetableBinding
 import com.alexflex.timetableassistant.utils.createBundleAndPut
 import com.alexflex.timetableassistant.utils.extraNullable
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() {
@@ -49,6 +51,12 @@ class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() 
                 pagerWeekdays.adapter = PagerAdapter(this@AddTimetableActivity)
                 TabLayoutMediator(tabsWeekdays, pagerWeekdays) { tab, positon ->
                 }
+            }
+        }
+        binding.btnDone.setOnClickListener {
+            lifecycleScope.launch {
+                mViewModel.putEntityBack()
+                finish()
             }
         }
     }

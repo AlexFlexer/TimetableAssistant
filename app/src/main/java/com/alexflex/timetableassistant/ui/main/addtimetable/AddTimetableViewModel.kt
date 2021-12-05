@@ -21,4 +21,9 @@ class AddTimetableViewModel(
             item.value = mTimetableDao.selectById(id) ?: return@launch
         }
     }
+
+    suspend fun putEntityBack() {
+        val entity = item.value ?: return
+        mTimetableDao.putTimetableEntity(entity)
+    }
 }
