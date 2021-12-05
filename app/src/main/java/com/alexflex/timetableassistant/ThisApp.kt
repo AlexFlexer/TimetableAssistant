@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.room.Room
 import com.alexflex.timetableassistant.database.TimetableDatabase
 import com.alexflex.timetableassistant.ui.main.addtimetable.AddTimetableViewModel
+import com.google.gson.GsonBuilder
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
@@ -17,6 +18,7 @@ val databaseModule = module {
             .fallbackToDestructiveMigration().build()
     }
     single { get<TimetableDatabase>().timetableDao() }
+    single { GsonBuilder()/* Setup what you need*/.create() }
 }
 
 val viewModelModule = module { viewModel { AddTimetableViewModel(get()) } }
