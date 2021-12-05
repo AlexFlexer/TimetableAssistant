@@ -28,7 +28,7 @@ class TimetableContentFragment : BaseBindingFragment<FragmentWeekdayTimetableBin
         binding.btnAddTimetableItem.setOnClickListener {
             AddNewItemDialogFragment().also {
                 it.arguments = createBundleAndPut(AddNewItemDialogFragment::mIndex to mIndex)
-            }.show(childFragmentManager, "jnviruvbiejbijcbuvie")
+            }.show(requireActivity().supportFragmentManager, "jnviruvbiejbijcbuvie")
         }
     }
 
