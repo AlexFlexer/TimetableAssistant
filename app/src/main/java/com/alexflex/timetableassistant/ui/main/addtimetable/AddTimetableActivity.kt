@@ -7,7 +7,7 @@ import com.alexflex.timetableassistant.R
 import com.alexflex.timetableassistant.base.BaseBindingActivity
 import com.alexflex.timetableassistant.databinding.ActivityAddTimetableBinding
 import com.alexflex.timetableassistant.utils.createBundleAndPut
-import com.alexflex.timetableassistant.utils.extra
+import com.alexflex.timetableassistant.utils.extraNullable
 
 class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() {
 
@@ -17,9 +17,16 @@ class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() 
                 createBundleAndPut(AddTimetableActivity::mTimetableName to timetableName)
             })
         }
+
+        fun startForSpecificTimetable(context: Context, id: Int) {
+            context.startActivity(Intent(context, AddTimetableActivity::class.java).also {
+                createBundleAndPut(AddTimetableActivity::mTimetableId to id)
+            })
+        }
     }
 
-    val mTimetableName: String by extra()
+    val mTimetableName: String? by extraNullable()
+    val mTimetableId: Int? by extraNullable()
 
     override fun createBinding(): ActivityAddTimetableBinding {
         return ActivityAddTimetableBinding.inflate(layoutInflater)
@@ -27,6 +34,7 @@ class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.toolbar.text = getString(R.string.main_add_timetable_title, mTimetableName)
+        binding.toolbar.text =
+            getString(R.string.main_add_timetable_title, mTimetableName.orEmpty())
     }
 }
