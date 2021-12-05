@@ -4,9 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import com.alexflex.timetableassistant.base.BaseBindingActivity
 import com.alexflex.timetableassistant.databinding.ActivityMainBinding
-import com.alexflex.timetableassistant.ui.addtimetable.AddTimetableActivity
+import com.alexflex.timetableassistant.ui.main.addtimetable.AddTimetableActivity
+import com.alexflex.timetableassistant.ui.main.now.NowActivity
 
 class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
+
+    companion object {
+        @JvmStatic
+        val TAG = MainActivity::class.java.name
+    }
 
     override fun createBinding(): ActivityMainBinding {
         return ActivityMainBinding.inflate(layoutInflater)
@@ -14,6 +20,16 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        binding.apply {
+            btnAdd.setOnClickListener {
+                startActivity(Intent(this@MainActivity, AddTimetableActivity::class.java))
+            }
+            btnFilter.setOnClickListener {
+                FilterDialogFragment().show(supportFragmentManager, TAG)
+            }
+            btnNow.setOnClickListener {
+                startActivity(Intent(this@MainActivity, NowActivity::class.java))
+            }
+        }
     }
 }
