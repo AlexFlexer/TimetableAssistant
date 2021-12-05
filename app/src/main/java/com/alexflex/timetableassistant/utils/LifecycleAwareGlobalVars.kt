@@ -2,7 +2,6 @@
 
 package com.alexflex.timetableassistant.utils
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
@@ -12,18 +11,18 @@ import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
 /**
- * This is a delegate for [AppCompatActivity] to get your component of type [T] when the activity
- * is not destroyed and at least created.
+ * This is a delegate for [LifecycleOwner] to get your component of type [T] when the lifecycle
+ * owner is not destroyed and at least created.
  *
  * @param componentInitializer is a function that returns desired instance of [T].
- * @param onViewDestroyedCallback is a callback to be invoked when the activity is
+ * @param onViewDestroyedCallback is a callback to be invoked when the lifecycle owner is
  * about to be destroyed and your [T] instance is about to become unavailable (i.e. null).
  * When this callback is invoked, [T] instance is not null yet, you can dispose it if needed.
  */
 fun <T> LifecycleOwner.autoDestroyLifecycleComponent(
     componentInitializer: () -> T,
     onViewDestroyedCallback: ((T) -> Unit)? = null
-): ReadOnlyProperty<Fragment, T> {
+): ReadOnlyProperty<LifecycleOwner, T> {
     return AutoDestroyComponent(this.lifecycle, componentInitializer, onViewDestroyedCallback)
 }
 
@@ -41,22 +40,6 @@ fun <T> Fragment.autoDestroyViewComponent(
     onViewDestroyedCallback: ((T) -> Unit)? = null
 ): ReadOnlyProperty<Fragment, T> {
     return AutoDestroyOnViewDestroyedComponent(this, componentInitializer, onViewDestroyedCallback)
-}
-
-/**
- * This is a delegate for [AppCompatActivity] to get your component of type [T] when the Activity
- * is created and not destroyed yet.
- *
- * @param componentInitializer is a function that returns desired instance of [T].
- * @param onDestroyCallback is a callback to be invoked when the activity is about to be
- * destroyed and your [T] instance is about to become unavailable (i.e. null).
- * When this callback is invoked, [T] instance is not null yet, you can dispose it if needed.
- */
-fun <T> AppCompatActivity.autoDestroyLifecycleComponent(
-    componentInitializer: () -> T,
-    onDestroyCallback: ((T) -> Unit)? = null
-): ReadOnlyProperty<Fragment, T> {
-    return AutoDestroyComponent(lifecycle, componentInitializer, onDestroyCallback)
 }
 
 private class AutoDestroyOnViewDestroyedComponent<I, T>(
