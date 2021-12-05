@@ -38,7 +38,8 @@ class TimetableContentFragment : BaseBindingFragment<FragmentWeekdayTimetableBin
             val weekdayTimetable = entity.lessons.getOrNull(mIndex)?.lectures ?: return@observe
             binding.btnAddTimetableItem.visibleIf(weekdayTimetable.size < 10)
             weekdayTimetable.forEach { weekdayLesson ->
-                val itemBinding = ItemTimetableItemBinding.inflate(layoutInflater, null, false)
+                val itemBinding =
+                    ItemTimetableItemBinding.inflate(layoutInflater, binding.layoutLectures, false)
                 itemBinding.apply {
                     txtLectureOrder.text = weekdayLesson.index.toString()
                     txtLectureName.text = weekdayLesson.name
