@@ -9,7 +9,6 @@ import com.alexflex.timetableassistant.databinding.DialogNewTimetableItemBinding
 import com.alexflex.timetableassistant.utils.argument
 import com.alexflex.timetableassistant.utils.getContent
 import com.alexflex.timetableassistant.utils.makeBackgroundTransparent
-import com.alexflex.timetableassistant.utils.notifySelf
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -39,17 +38,13 @@ class AddNewItemDialogFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         makeBackgroundTransparent()
         binding.btnOk.setOnClickListener click@{
-            val lectures =
-                mViewModel.item.value?.lessons?.getOrNull(mIndex)?.lectures ?: return@click
-            if (binding.editLectureName.text.isNullOrBlank()) return@click
-            val newLecture = TimetableItem(
-                lectures.size + 1,
-                binding.editLectureName.getContent(),
-                binding.editLecturer.getContent(),
-                binding.editAuditory.getContent()
+            mViewModel.addNewItemWithDayIndex(
+                mIndex, TimetableItem(
+                    binding.editLectureName.getContent(),
+                    binding.editLecturer.getContent(),
+                    binding.editAuditory.getContent()
+                )
             )
-            lectures.add(newLecture)
-            mViewModel.item.notifySelf()
             dismiss()
         }
     }

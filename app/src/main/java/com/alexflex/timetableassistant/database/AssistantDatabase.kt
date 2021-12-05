@@ -10,10 +10,10 @@ const val TIMETABLE_TABLE = "tt_table"
 
 // this class represents item in the timetable
 data class TimetableItem(
-    val index: Int,
     val name: String,
     val description: String,
-    val auditory: String
+    val auditory: String,
+    var index: Int = 0
 )
 
 data class WeekDayTimetable(
@@ -24,7 +24,7 @@ data class WeekDayTimetable(
 @Entity(tableName = TIMETABLE_TABLE)
 class TimetableEntity(
     val name: String,
-    val lessons: List<WeekDayTimetable>,
+    var lessons: List<WeekDayTimetable>,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
 )
 
