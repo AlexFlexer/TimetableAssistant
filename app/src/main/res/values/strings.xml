@@ -17,4 +17,6 @@
     <string name="main_lecture_name">Название дисциплины</string>
     <string name="main_lecturer">Имя преподавателя/группы</string>
     <string name="main_auditory">Аудитория</string>
+
+    <string name="main_timetable_name_title">Введите название расписания</string>
 </resources>
