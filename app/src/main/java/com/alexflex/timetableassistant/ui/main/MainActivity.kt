@@ -16,7 +16,6 @@ import com.alexflex.timetableassistant.utils.getLayoutInflater
 import com.alexflex.timetableassistant.utils.onClick
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
 class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
@@ -34,16 +33,14 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
     }
 
     private fun setupDaoObserving() {
-        lifecycleScope.launch {
-            mTimetablesDao.getAllTimetables()
-                .onEach {
-                    binding.recyclerTimetables.adapter = TimetablesAdapter(it) { entity ->
-                        AddTimetableActivity.startForSpecificTimetable(
-                            this@MainActivity, entity.id
-                        )
-                    }
-                }.launchIn(lifecycleScope)
-        }
+        mTimetablesDao.getAllTimetables()
+            .onEach {
+                binding.recyclerTimetables.adapter = TimetablesAdapter(it) { entity ->
+                    AddTimetableActivity.startForSpecificTimetable(
+                        this@MainActivity, entity.id
+                    )
+                }
+            }.launchIn(lifecycleScope)
     }
 
     private fun setupClickListeners() {
