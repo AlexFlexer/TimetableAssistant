@@ -72,4 +72,12 @@
         android:maxLength="75"
         app:layout_constraintTop_toBottomOf="@id/txt_auditory" />
 
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/button_ok"
+        app:layout_constraintTop_toBottomOf="@id/edit_auditory" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
