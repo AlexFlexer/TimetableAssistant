@@ -31,7 +31,7 @@ class TimetableEntity(
 @Dao
 interface TimetableDao {
     @Query("select * from tt_table")
-    suspend fun getAllTimetables(): Flow<TimetableEntity>
+    suspend fun getAllTimetables(): Flow<List<TimetableEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun putTimetableEntity(entity: TimetableEntity)
