@@ -21,6 +21,7 @@ class SplashActivity : BaseBindingActivity<ActivitySplashBinding>() {
         lifecycleScope.launchWhenResumed {
             delay(1000L)
             startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+            finish()
         }
     }
 }
