@@ -1,18 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_activity_background">
 
-    <fragment
-        android:id="@+id/nav_host_add_timetable"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <TextView
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_add_timetable"
-        tools:ignore="FragmentTagUsage" />
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Новое расписание для кого бы то ни было" />
 
-</FrameLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs_weekdays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weekday_1" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weekday_2" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weekday_3" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weekday_4" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weekday_5" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weekday_6" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weekday_7" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager_weekdays"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabs_weekdays" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

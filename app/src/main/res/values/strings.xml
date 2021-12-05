@@ -7,4 +7,14 @@
     <string name="main_filter_all">Все</string>
     <string name="main_filter_students">Студент</string>
     <string name="main_filter_lectors">Преподаватель</string>
+
+    <string name="main_add_timetable_student">Новое расписание для студента</string>
+    <string name="main_add_timetable_lector">Новое расписание для преподавателя</string>
+    <string name="weekday_1">пн</string>
+    <string name="weekday_2">вт</string>
+    <string name="weekday_3">ср</string>
+    <string name="weekday_4">чт</string>
+    <string name="weekday_5">пт</string>
+    <string name="weekday_6">сб</string>
+    <string name="weekday_7">вс</string>
 </resources>
