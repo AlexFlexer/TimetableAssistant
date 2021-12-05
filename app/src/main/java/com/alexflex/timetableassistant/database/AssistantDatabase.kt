@@ -59,6 +59,8 @@ class WeekDayTimetableConverter {
     fun toWeekdayTimetable(json: String?): List<WeekDayTimetable> {
         if (json.isNullOrBlank()) return emptyList()
         val gson by inject<Gson>(Gson::class.java)
-        return json.parseType(gson) ?: emptyList()
+        return json.parseType<WeekDayTimetableWrapper>(gson) ?: emptyList()
     }
 }
+
+class WeekDayTimetableWrapper : ArrayList<WeekDayTimetable>()
