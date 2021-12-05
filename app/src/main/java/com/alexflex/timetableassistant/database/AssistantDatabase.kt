@@ -23,6 +23,7 @@ data class WeekDayTimetable(
 
 @Entity(tableName = TIMETABLE_TABLE)
 class TimetableEntity(
+    val name: String,
     val lessons: List<WeekDayTimetable>,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
 )
