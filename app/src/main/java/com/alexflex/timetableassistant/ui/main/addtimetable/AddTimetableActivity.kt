@@ -44,10 +44,10 @@ class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() 
         super.onCreate(savedInstanceState)
         if (mTimetableId != null) mViewModel.fetchEntityById(mTimetableId ?: 0)
         else mViewModel.createNewEntity(mTimetableName.orEmpty())
-        mViewModel.item.observe(this) {
+        mViewModel.item.observe(this) { entity ->
             binding.apply {
                 toolbar.text =
-                    getString(R.string.main_add_timetable_title, mTimetableName.orEmpty())
+                    getString(R.string.main_add_timetable_title, entity.name)
                 pagerWeekdays.adapter = PagerAdapter(this@AddTimetableActivity)
                 TabLayoutMediator(tabsWeekdays, pagerWeekdays) { tab, position ->
                     tab.text = resources.getStringArray(R.array.weekdays)[position]
