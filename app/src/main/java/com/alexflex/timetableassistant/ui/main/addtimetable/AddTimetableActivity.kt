@@ -21,13 +21,13 @@ class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() 
     companion object {
         fun startForNamedTimetable(context: Context, timetableName: String) {
             context.startActivity(Intent(context, AddTimetableActivity::class.java).also {
-                createBundleAndPut(AddTimetableActivity::mTimetableName to timetableName)
+                it.putExtras(createBundleAndPut(AddTimetableActivity::mTimetableName to timetableName))
             })
         }
 
         fun startForSpecificTimetable(context: Context, id: Int) {
             context.startActivity(Intent(context, AddTimetableActivity::class.java).also {
-                createBundleAndPut(AddTimetableActivity::mTimetableId to id)
+                it.putExtras(createBundleAndPut(AddTimetableActivity::mTimetableId to id))
             })
         }
     }
