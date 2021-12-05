@@ -52,6 +52,7 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
                         val name = binding.editTimetableName.text
                         if (name.isNullOrBlank()) return@click
                         AddTimetableActivity.startForNamedTimetable(this, name.toString())
+                        dialog.dismiss()
                     }
                 }
             )
