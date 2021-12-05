@@ -42,7 +42,7 @@ class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (mTimetableId == null) mViewModel.fetchEntityById(mTimetableId ?: 0)
+        if (mTimetableId != null) mViewModel.fetchEntityById(mTimetableId ?: 0)
         else mViewModel.createNewEntity(mTimetableName.orEmpty())
         mViewModel.item.observe(this) {
             binding.apply {
