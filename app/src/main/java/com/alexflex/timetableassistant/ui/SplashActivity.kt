@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.alexflex.timetableassistant.base.BaseBindingActivity
 import com.alexflex.timetableassistant.databinding.ActivitySplashBinding
+import com.alexflex.timetableassistant.ui.main.MainActivity
 import kotlinx.coroutines.delay
 
 @SuppressLint("CustomSplashScreen")
