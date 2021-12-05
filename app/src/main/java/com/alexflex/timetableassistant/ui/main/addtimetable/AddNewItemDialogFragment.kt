@@ -38,6 +38,7 @@ class AddNewItemDialogFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         makeBackgroundTransparent()
         binding.btnOk.setOnClickListener click@{
+            if (binding.editLectureName.getContent().isEmpty()) return@click
             mViewModel.addNewItemWithDayIndex(
                 mIndex, TimetableItem(
                     binding.editLectureName.getContent(),
