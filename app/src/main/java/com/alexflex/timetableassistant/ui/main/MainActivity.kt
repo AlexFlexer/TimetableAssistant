@@ -9,6 +9,7 @@ import com.alexflex.timetableassistant.database.TimetableDao
 import com.alexflex.timetableassistant.database.TimetableEntity
 import com.alexflex.timetableassistant.databinding.ActivityMainBinding
 import com.alexflex.timetableassistant.databinding.DialogTimetableNameBinding
+import com.alexflex.timetableassistant.databinding.ItemEmptyBinding
 import com.alexflex.timetableassistant.databinding.ItemTimetableBinding
 import com.alexflex.timetableassistant.ui.main.addtimetable.AddTimetableActivity
 import com.alexflex.timetableassistant.utils.createAndShowDialogWithCustomView
@@ -35,11 +36,12 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
     private fun setupDaoObserving() {
         mTimetablesDao.getAllTimetables()
             .onEach {
-                binding.recyclerTimetables.adapter = TimetablesAdapter(it) { entity ->
-                    AddTimetableActivity.startForSpecificTimetable(
-                        this@MainActivity, entity.id
-                    )
-                }
+                binding.recyclerTimetables.adapter =
+                    if (it.isEmpty()) EmptyAdapter() else TimetablesAdapter(it) { entity ->
+                        AddTimetableActivity.startForSpecificTimetable(
+                            this@MainActivity, entity.id
+                        )
+                    }
             }.launchIn(lifecycleScope)
     }
 
@@ -80,4 +82,18 @@ class TimetablesAdapter(
     }
 
     override fun getItemCount(): Int = mTimetables.size
+}
+
+class EmptyAdapter : RecyclerView.Adapter<EmptyAdapter.EmptyHolder>() {
+    class EmptyHolder(val bind: ItemEmptyBinding) : RecyclerView.ViewHolder(bind.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmptyHolder {
+        return EmptyHolder(ItemEmptyBinding.inflate(parent.getLayoutInflater(), parent, false))
+    }
+
+    override fun onBindViewHolder(holder: EmptyHolder, position: Int) {
+
+    }
+
+    override fun getItemCount(): Int = 1
 }

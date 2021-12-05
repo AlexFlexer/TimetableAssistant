@@ -16,6 +16,7 @@
         android:paddingHorizontal="16dp"
         android:paddingTop="16dp"
         android:paddingBottom="70dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="200"
         tools:listitem="@layout/item_timetable" />
 

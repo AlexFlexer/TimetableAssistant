@@ -21,4 +21,6 @@
 
     <string name="button_ok">ОК</string>
     <string name="button_cancel">Отмена</string>
+
+    <string name="main_list_empty">Вы еще не добавили ни одного раписания.\nНажмите на \"+\", чтобы добавить новое.</string>
 </resources>
