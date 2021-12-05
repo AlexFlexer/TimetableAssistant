@@ -19,7 +19,7 @@ val databaseModule = module {
     single { get<TimetableDatabase>().timetableDao() }
 }
 
-val viewModelModule = module { viewModel { AddTimetableViewModel() } }
+val viewModelModule = module { viewModel { AddTimetableViewModel(get()) } }
 
 class ThisApp : Application() {
     override fun onCreate() {
