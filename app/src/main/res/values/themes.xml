@@ -7,6 +7,7 @@
         <item name="android:windowBackground">#00000000</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
+        <item name="android:textViewStyle">@style/DefaultTextViewStyle</item>
     </style>
 
     <style name="RadioButtonFilter" parent="Widget.AppCompat.CompoundButton.RadioButton">
@@ -15,5 +16,9 @@
         <item name="android:padding">10dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="DefaultTextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/color_black</item>
     </style>
 </resources>
