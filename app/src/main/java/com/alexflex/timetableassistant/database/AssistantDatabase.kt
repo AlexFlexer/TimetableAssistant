@@ -37,7 +37,7 @@ interface TimetableDao {
     suspend fun putTimetableEntity(entity: TimetableEntity)
 
     @Query("select * from tt_table where id = :id")
-    suspend fun selectById(id: Int)
+    suspend fun selectById(id: Int): TimetableEntity?
 }
 
 @Database(entities = [TimetableEntity::class], version = 1)
