@@ -6,24 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.alexflex.timetableassistant.utils.autoDestroyViewComponent
 
-abstract class BaseBindingFragment<VB: ViewBinding>: Fragment() {
-    private var _binding: VB? = null
-    val binding: VB
-        get() = _binding!!
+abstract class BaseBindingFragment<VB : ViewBinding> : Fragment() {
+
+    val binding by autoDestroyViewComponent({
+        createBinding()
+    })
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = createBinding()
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     abstract fun createBinding(): VB

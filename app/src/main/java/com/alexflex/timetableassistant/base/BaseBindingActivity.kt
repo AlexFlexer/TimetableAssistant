@@ -3,20 +3,17 @@ package com.alexflex.timetableassistant.base
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.alexflex.timetableassistant.utils.autoDestroyLifecycleComponent
 
 abstract class BaseBindingActivity<VB : ViewBinding> : AppCompatActivity() {
-    private var _binding: VB? = null
-    val binding: VB
-        get() = _binding!!
+
+    val binding: VB by autoDestroyLifecycleComponent({
+        createBinding()
+    })
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = createBinding()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+        setContentView(binding.root)
     }
 
     abstract fun createBinding(): VB
