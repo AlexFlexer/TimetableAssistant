@@ -19,6 +19,7 @@
         android:id="@+id/edit_timetable_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text|textCapSentences"
         android:paddingHorizontal="10dp"
         app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
