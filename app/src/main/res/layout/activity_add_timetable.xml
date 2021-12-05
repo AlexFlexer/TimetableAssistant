@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
+        android:ellipsize="end"
         android:gravity="center"
+        android:maxLines="2"
         android:padding="10dp"
         android:textColor="@color/color_white"
         android:textSize="20sp"
@@ -24,44 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_white"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/weekday_1" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/weekday_2" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/weekday_3" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/weekday_4" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/weekday_5" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/weekday_6" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/weekday_7" />
-
-    </com.google.android.material.tabs.TabLayout>
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager_weekdays"
