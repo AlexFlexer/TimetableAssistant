@@ -49,8 +49,9 @@ class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() 
                 toolbar.text =
                     getString(R.string.main_add_timetable_title, mTimetableName.orEmpty())
                 pagerWeekdays.adapter = PagerAdapter(this@AddTimetableActivity)
-                TabLayoutMediator(tabsWeekdays, pagerWeekdays) { tab, positon ->
-                }
+                TabLayoutMediator(tabsWeekdays, pagerWeekdays) { tab, position ->
+                    tab.text = resources.getStringArray(R.array.weekdays)[position]
+                }.attach()
             }
         }
         binding.btnDone.setOnClickListener {

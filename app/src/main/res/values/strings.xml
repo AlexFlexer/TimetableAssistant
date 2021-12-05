@@ -4,13 +4,15 @@
     <string name="splash_greeting">Прототип, только для Вас</string>
 
     <string name="main_add_timetable_title">Новое расписание \"%1$s\"</string>
-    <string name="weekday_1">пн</string>
-    <string name="weekday_2">вт</string>
-    <string name="weekday_3">ср</string>
-    <string name="weekday_4">чт</string>
-    <string name="weekday_5">пт</string>
-    <string name="weekday_6">сб</string>
-    <string name="weekday_7">вс</string>
+    <string-array name="weekdays">
+        <item>пн</item>
+        <item>вт</item>
+        <item>ср</item>
+        <item>чт</item>
+        <item>пт</item>
+        <item>сб</item>
+        <item>вс</item>
+    </string-array>
 
     <string name="main_new_timetable_item">Новый пункт расписания</string>
     <string name="main_lecture_name">Название дисциплины</string>
