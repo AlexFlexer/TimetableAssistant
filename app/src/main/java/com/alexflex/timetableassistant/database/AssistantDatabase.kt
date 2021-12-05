@@ -35,6 +35,9 @@ interface TimetableDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun putTimetableEntity(entity: TimetableEntity)
+
+    @Query("select * from tt_table where id = :id")
+    suspend fun selectById(id: Int)
 }
 
 @Database(entities = [TimetableEntity::class], version = 1)
