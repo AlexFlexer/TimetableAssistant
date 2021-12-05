@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt_lecture_order"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_activity_background"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txt_lecture_name"
+        app:layout_constraintHorizontal_weight="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/txt_lecture_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:background="@color/color_activity_background"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="5"
+        android:paddingVertical="5dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/txt_lecture_auditory"
+        app:layout_constraintHorizontal_weight="0.8"
+        app:layout_constraintStart_toEndOf="@id/txt_lecture_order"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Название дисципины" />
+
+    <TextView
+        android:id="@+id/txt_lecture_lecturer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="@color/color_activity_background"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="3"
+        android:paddingVertical="3dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/txt_lecture_name"
+        app:layout_constraintStart_toStartOf="@id/txt_lecture_name"
+        app:layout_constraintTop_toBottomOf="@id/txt_lecture_name"
+        tools:text="имя преподавателя" />
+
+    <TextView
+        android:id="@+id/txt_lecture_auditory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/color_activity_background"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="0.18"
+        app:layout_constraintStart_toEndOf="@id/txt_lecture_name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Кабинет" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
