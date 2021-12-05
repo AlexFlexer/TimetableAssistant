@@ -18,7 +18,7 @@ data class TimetableItem(
 
 data class WeekDayTimetable(
     val weekdayIndex: Int,
-    val lectures: TimetableItem
+    val lectures: List<TimetableItem>
 )
 
 @Entity(tableName = TIMETABLE_TABLE)
