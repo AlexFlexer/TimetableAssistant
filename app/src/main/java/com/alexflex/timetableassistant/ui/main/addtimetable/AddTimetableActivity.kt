@@ -3,11 +3,16 @@ package com.alexflex.timetableassistant.ui.main.addtimetable
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.alexflex.timetableassistant.R
 import com.alexflex.timetableassistant.base.BaseBindingActivity
 import com.alexflex.timetableassistant.databinding.ActivityAddTimetableBinding
 import com.alexflex.timetableassistant.utils.createBundleAndPut
 import com.alexflex.timetableassistant.utils.extraNullable
+import com.google.android.material.tabs.TabLayoutMediator
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() {
 
@@ -25,6 +30,7 @@ class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() 
         }
     }
 
+    private val mViewModel: AddTimetableViewModel by viewModel()
     val mTimetableName: String? by extraNullable()
     val mTimetableId: Int? by extraNullable()
 
@@ -34,7 +40,26 @@ class AddTimetableActivity : BaseBindingActivity<ActivityAddTimetableBinding>() 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.toolbar.text =
-            getString(R.string.main_add_timetable_title, mTimetableName.orEmpty())
+        if (mTimetableId == null) mViewModel.fetchEntityById(mTimetableId ?: 0)
+        else mViewModel.createNewEntity(mTimetableName.orEmpty())
+        mViewModel.item.observe(this) {
+            binding.apply {
+                toolbar.text =
+                    getString(R.string.main_add_timetable_title, mTimetableName.orEmpty())
+                pagerWeekdays.adapter = PagerAdapter(this@AddTimetableActivity)
+                TabLayoutMediator(tabsWeekdays, pagerWeekdays) { tab, positon ->
+                }
+            }
+        }
+    }
+}
+
+class PagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
+    override fun getItemCount(): Int = 7
+
+    override fun createFragment(position: Int): Fragment {
+        return TimetableContentFragment().apply {
+            mIndex = position
+        }
     }
 }
