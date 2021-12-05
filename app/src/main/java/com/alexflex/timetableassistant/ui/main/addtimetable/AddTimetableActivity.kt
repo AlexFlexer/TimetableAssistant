@@ -1,4 +1,4 @@
-package com.alexflex.timetableassistant.ui.addtimetable
+package com.alexflex.timetableassistant.ui.main.addtimetable
 
 import com.alexflex.timetableassistant.base.BaseBindingActivity
 import com.alexflex.timetableassistant.databinding.ActivityAddTimetableBinding

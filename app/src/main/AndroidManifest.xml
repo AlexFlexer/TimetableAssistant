@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.main.MainActivity" />
-        <activity android:name=".ui.addtimetable.AddTimetableActivity" />
+        <activity android:name="com.alexflex.timetableassistant.ui.main.addtimetable.AddTimetableActivity" />
     </application>
 
 </manifest>
