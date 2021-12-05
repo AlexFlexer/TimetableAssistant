@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_10dp_top"
+    android:padding="16dp">
+
+    <View
+        android:id="@+id/view_push"
+        android:layout_width="100dp"
+        android:layout_height="5dp"
+        android:background="@drawable/rounded_45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/main_new_timetable_item"
+        android:textColor="@color/color_black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_push" />
+
+    <TextView
+        android:id="@+id/txt_lecture_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/main_lecture_name"
+        app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+    <EditText
+        android:id="@+id/edit_lecture_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="75"
+        app:layout_constraintTop_toBottomOf="@id/txt_lecture_name" />
+
+    <TextView
+        android:id="@+id/txt_lecturer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/main_lecturer"
+        app:layout_constraintTop_toBottomOf="@id/edit_lecture_name" />
+
+    <EditText
+        android:id="@+id/edit_lecturer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="75"
+        app:layout_constraintTop_toBottomOf="@id/txt_lecturer" />
+
+    <TextView
+        android:id="@+id/txt_auditory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/main_auditory"
+        app:layout_constraintTop_toBottomOf="@id/edit_lecturer" />
+
+    <EditText
+        android:id="@+id/edit_auditory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="75"
+        app:layout_constraintTop_toBottomOf="@id/txt_auditory" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
