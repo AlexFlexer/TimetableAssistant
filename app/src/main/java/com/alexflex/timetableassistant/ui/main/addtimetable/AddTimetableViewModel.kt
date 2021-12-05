@@ -39,7 +39,7 @@ class AddTimetableViewModel(
             item.value!!.lessons = list
             lessons = list
         }
-        timetableItem.index = lessons.size + 1
+        timetableItem.index = lessons[dayIndex].lectures.size + 1
         lessons[dayIndex].lectures.add(timetableItem)
         item.notifySelf()
     }
