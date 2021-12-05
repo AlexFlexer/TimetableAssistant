@@ -1,4 +1,4 @@
-package com.alexflex.timetableassistant
+package com.alexflex.timetableassistant.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
