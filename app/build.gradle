@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -47,7 +48,7 @@ dependencies {
     // students and lectors
     def room_version = "2.3.0"
     implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
     // coroutines for better readability of concurrent code, and more
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
     // coroutines with lifecycle-aware and architecture components
