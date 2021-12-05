@@ -35,7 +35,7 @@ class TimetableContentFragment : BaseBindingFragment<FragmentWeekdayTimetableBin
     private fun setupObserving() {
         mViewModel.item.observe(viewLifecycleOwner) { entity ->
             binding.layoutLectures.removeAllViews()
-            val weekdayTimetable = entity.lessons[mIndex].lectures
+            val weekdayTimetable = entity.lessons.getOrNull(mIndex)?.lectures ?: return@observe
             binding.btnAddTimetableItem.visibleIf(weekdayTimetable.size < 10)
             weekdayTimetable.forEach { weekdayLesson ->
                 val itemBinding = ItemTimetableItemBinding.inflate(layoutInflater, null, false)
