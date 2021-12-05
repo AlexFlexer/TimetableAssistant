@@ -10,4 +10,6 @@
 
     <color name="color_filter_student">#FF3D00</color>
     <color name="color_filter_lector">#3F51B5</color>
+
+    <color name="color_activity_background">#E7E7E7</color>
 </resources>
