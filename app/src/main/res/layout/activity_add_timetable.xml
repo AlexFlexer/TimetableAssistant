@@ -27,43 +27,36 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/weekday_1" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/weekday_2" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/weekday_3" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/weekday_4" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/weekday_5" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/weekday_6" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tab_7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/weekday_7" />
