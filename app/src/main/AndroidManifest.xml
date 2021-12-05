@@ -21,7 +21,6 @@
         </activity>
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.main.addtimetable.AddTimetableActivity" />
-        <activity android:name=".ui.main.now.NowActivity" />
     </application>
 
 </manifest>

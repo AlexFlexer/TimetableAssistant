@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.alexflex.timetableassistant.base.BaseBindingActivity
 import com.alexflex.timetableassistant.databinding.ActivityMainBinding
 import com.alexflex.timetableassistant.ui.main.addtimetable.AddTimetableActivity
-import com.alexflex.timetableassistant.ui.main.now.NowActivity
 
 class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
 
@@ -26,9 +25,6 @@ class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
             }
             btnFilter.setOnClickListener {
                 FilterDialogFragment().show(supportFragmentManager, TAG)
-            }
-            btnNow.setOnClickListener {
-                startActivity(Intent(this@MainActivity, NowActivity::class.java))
             }
         }
     }
